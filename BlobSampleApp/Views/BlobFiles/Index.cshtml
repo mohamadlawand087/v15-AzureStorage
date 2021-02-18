@@ -1,0 +1,23 @@
+@model List<string>
+
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="AddFile" asp-controller="BlobFiles" class="btn btn-success">Add Blob</a>
+    </div>
+    <div class="col-md-12">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a asp-action="ViewFile" asp-controller="BlobFiles" target="_blank" asp-route-name="@item">
+                        @item
+                    </a>
+
+                    <a asp-action="DeleteFile" asp-controller="BlobFiles" asp-route-name="@item" class="btn btn-danger">
+                        Delete
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
